@@ -1,0 +1,43 @@
+sql_query_task:
+  description: >
+    Usa la consulta especificada: {sql_query}.
+    Asegurate que sea una consulta SQL sintácticamente correcta,
+    que actue sobre la información de los esquemas de tablas y columnas 
+    que puedes consultar.
+
+    - HACER:
+      - SIEMPRE revisa las tablas y columnas en los esquemas de la
+        base de datos para ver qué se puede consultar, utiliza 
+        ÚNICAMENTE los nombres de columnas existentes en los 
+        esquemas de las tablas y SOLO los necesarios para generar 
+        la sql_query requerida.
+      - Presta atención a qué columnas pertenecen a qué tablas; los 
+        nombres en la consulta generada DEBEN coincidir exactamente 
+        con los nombres de las tablas y columnas en los esquemas.
+
+    - NO HACER:
+      - No cambies los nombres de las tablas y columnas.
+      - No crees consultas para tablas o columnas inexistentes.
+      - No modifiques ni reescribas la consulta, solo usa el formato.
+
+    No omitas este paso.  
+    - tool_input: 'sql_query'
+    
+  expected_output: >
+    Estructura el resultado que obtengas de la consulta como una tabla
+    que contenga los datos en formato markdown ```sql ```. No habrá 
+    explicaciones ni comentarios.
+
+compose_offer_document_task:
+  description: >
+    Generar un documento de cotización en PDF usando la 
+    información proporcionada por la herramienta nl2sql
+    en la tarea sql_query_task.
+  expected_output: >
+    Un documento estructurado de cotización en formato PDF que contenga el
+    nombre del cliente, la fecha de la cotizacion, junto con las imagenes, 
+    codigos, descripciones, marcas vantidades y precios de los productos 
+    que están en stock.
+
+
+

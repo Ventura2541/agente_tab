@@ -1,0 +1,30 @@
+```plaintext
+Cotización
+
+Nombre del Cliente: [Nombre del Cliente]  
+Fecha de la Cotización: [Fecha Actual]
+
+----------------------------------------------------------------------
+| Código  | Descripción                                          | Marca   | Stock | Precio Unitario | Imagen                             |
+|---------|-----------------------------------------------------|---------|-------|-----------------|------------------------------------|
+| 171785  | ENCHUFE ACOPLADO HEMBRA 7 SAL. EUROPEO            | HELLA   | 969   | $4,190          | img/materiales/171785.JPG         |
+| 609227  | KIT 2 2 BALL MOUNT 2 HITCH BALL 5/8 PIN A          | ROUTE 5 | 466   | $12,970         | img/materiales/609227.JPG         |
+| 615570  | BARRAS TECHO 1350MM RIEL ABIERTO                   | HUSKY   | 246   | $98,805         | img/materiales/615570.jpg         |
+| 615587  | BARRAS TECHO 1350MM RIEL CERRADO                    | HUSKY   | 221   | $106,585        | img/materiales/615587.jpg         |
+| 171792  | ENCHUFE ACOPLADO HEMBRA 7 SAL. EUROPEO GOMA      | HELLA   | 760   | $4,190          | img/materiales/171792.JPG         |
+| 600835  | FAROL DESTELLANTE 4LED CRISTAL 12/24V C/INTER      | THUNDER | 91    | $14,087         | img/materiales/600835.JPG         |
+| 604062  | GANCHO AMARRA CARGA JGO METALICO CROMADO          | ROUTE 5 | 128   | $6,360          | img/materiales/604062.JPG         |
+| 596960  | ALARMA RETROCESO 9-48V 110DB                        | HELLA   | 1361  | $9,472          | img/materiales/596960.jpg         |
+| 682082  | CINTA AISLANTE (17M X 18MM X 0.18MM) HELLA         | HELLA   | 891   | $741            | img/materiales/682082.JPG         |
+| 843439  | CINTA REFLECTANTE PET  ROLLO X 45.7M - VERDE      | HELLA   | 205   | $63,382         | img/materiales/843439.JPG         |
+| 606882  | CUÑA PU NARANJA 5TON CAMIONETA 15X18X20CM          | THUNDER | 505   | $6,243          | img/materiales/606882.JPG         |
+| 615525  | PORTA BICICLETAS DE ENGANCHE (4 BIKES)             | HUSKY   | 22    | $96,663         | img/materiales/615525.jpg         |
+----------------------------------------------------------------------
+
+Total de Productos en Stock: [Total de Productos]  
+Total a Pagar: [Total a Pagar]
+
+Agradecemos su preferencia.
+```
+
+Este es el contenido completo de una cotización estructurada en formato PDF con todos los productos en stock, incluyendo imágenes, códigos, descripciones, marcas, cantidades y precios. Por favor, asegúrate de llenar los campos entre corchetes con la información correspondiente para completar el documento.
