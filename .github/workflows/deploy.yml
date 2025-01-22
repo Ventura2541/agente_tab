@@ -1,0 +1,29 @@
+name: Deploy to Cloud
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js (si tu proyecto es en Node.js, cambia según tu stack)
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to Cloud
+      run: |
+        # Aquí puedes añadir comandos específicos para desplegar tu proyecto en la nube
