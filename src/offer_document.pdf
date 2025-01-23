@@ -1,30 +1,112 @@
-```plaintext
-Cotización
+To create a complete and structured quotation document in PDF format for the products currently in stock, we will use the data provided. The key details include the product name, description, code, brand, image, available quantity, and final price. Here are the steps and content to be included in the PDF document:
 
-Nombre del Cliente: [Nombre del Cliente]  
-Fecha de la Cotización: [Fecha Actual]
+1. **Document Header**:
+   - **Customer Name**: [Enter Customer Name Here]
+   - **Quotation Date**: [Enter Date Here]
 
-----------------------------------------------------------------------
-| Código  | Descripción                                          | Marca   | Stock | Precio Unitario | Imagen                             |
-|---------|-----------------------------------------------------|---------|-------|-----------------|------------------------------------|
-| 171785  | ENCHUFE ACOPLADO HEMBRA 7 SAL. EUROPEO            | HELLA   | 969   | $4,190          | img/materiales/171785.JPG         |
-| 609227  | KIT 2 2 BALL MOUNT 2 HITCH BALL 5/8 PIN A          | ROUTE 5 | 466   | $12,970         | img/materiales/609227.JPG         |
-| 615570  | BARRAS TECHO 1350MM RIEL ABIERTO                   | HUSKY   | 246   | $98,805         | img/materiales/615570.jpg         |
-| 615587  | BARRAS TECHO 1350MM RIEL CERRADO                    | HUSKY   | 221   | $106,585        | img/materiales/615587.jpg         |
-| 171792  | ENCHUFE ACOPLADO HEMBRA 7 SAL. EUROPEO GOMA      | HELLA   | 760   | $4,190          | img/materiales/171792.JPG         |
-| 600835  | FAROL DESTELLANTE 4LED CRISTAL 12/24V C/INTER      | THUNDER | 91    | $14,087         | img/materiales/600835.JPG         |
-| 604062  | GANCHO AMARRA CARGA JGO METALICO CROMADO          | ROUTE 5 | 128   | $6,360          | img/materiales/604062.JPG         |
-| 596960  | ALARMA RETROCESO 9-48V 110DB                        | HELLA   | 1361  | $9,472          | img/materiales/596960.jpg         |
-| 682082  | CINTA AISLANTE (17M X 18MM X 0.18MM) HELLA         | HELLA   | 891   | $741            | img/materiales/682082.JPG         |
-| 843439  | CINTA REFLECTANTE PET  ROLLO X 45.7M - VERDE      | HELLA   | 205   | $63,382         | img/materiales/843439.JPG         |
-| 606882  | CUÑA PU NARANJA 5TON CAMIONETA 15X18X20CM          | THUNDER | 505   | $6,243          | img/materiales/606882.JPG         |
-| 615525  | PORTA BICICLETAS DE ENGANCHE (4 BIKES)             | HUSKY   | 22    | $96,663         | img/materiales/615525.jpg         |
-----------------------------------------------------------------------
+2. **Product Details**:
+   - Only include products where the stock is greater than 0.
 
-Total de Productos en Stock: [Total de Productos]  
-Total a Pagar: [Total a Pagar]
+3. **Structured List of Products in Stock**:
 
-Agradecemos su preferencia.
-```
+   - **Product 1**:
+     - **Code**: 171785
+     - **Description**: ENCHUFE ACOPLADO HEMBRA 7 SAL. EUROPEO
+     - **Brand**: HELLA
+     - **Image**: img/materiales/171785.JPG
+     - **Quantity**: 969
+     - **Price**: $4,190
 
-Este es el contenido completo de una cotización estructurada en formato PDF con todos los productos en stock, incluyendo imágenes, códigos, descripciones, marcas, cantidades y precios. Por favor, asegúrate de llenar los campos entre corchetes con la información correspondiente para completar el documento.
+   - **Product 2**:
+     - **Code**: 609227
+     - **Description**: KIT 2 2 BALL MOUNT 2 HITCH BALL 5/8 PIN A
+     - **Brand**: ROUTE 5
+     - **Image**: img/materiales/609227.JPG
+     - **Quantity**: 466
+     - **Price**: $12,970
+
+   - **Product 3**:
+     - **Code**: 615570
+     - **Description**: BARRAS TECHO 1350MM RIEL ABIERTO
+     - **Brand**: HUSKY
+     - **Image**: img/materiales/615570.jpg
+     - **Quantity**: 246
+     - **Price**: $98,805
+
+   - **Product 4**:
+     - **Code**: 615587
+     - **Description**: BARRAS TECHO 1350MM RIEL CERRADO
+     - **Brand**: HUSKY
+     - **Image**: img/materiales/615587.jpg
+     - **Quantity**: 221
+     - **Price**: $106,585
+
+   - **Product 5**:
+     - **Code**: 171792
+     - **Description**: ENCHUFE ACOPLADO HEMBRA 7 SAL. EUROPEO GOMA
+     - **Brand**: HELLA
+     - **Image**: img/materiales/171792.JPG
+     - **Quantity**: 760
+     - **Price**: $4,190
+
+   - **Product 6**:
+     - **Code**: 600835
+     - **Description**: FAROL DESTELLANTE 4LED CRISTAL 12/24V C/INTER
+     - **Brand**: THUNDER
+     - **Image**: img/materiales/600835.JPG
+     - **Quantity**: 91
+     - **Price**: $14,087
+
+   - **Product 7**:
+     - **Code**: 604062
+     - **Description**: GANCHO AMARRA CARGA JGO METALICO CROMADO
+     - **Brand**: ROUTE 5
+     - **Image**: img/materiales/604062.JPG
+     - **Quantity**: 128
+     - **Price**: $6,360
+
+   - **Product 8**:
+     - **Code**: 682082
+     - **Description**: CINTA AISLANTE (17M X 18MM X 0.18MM) HELLA
+     - **Brand**: HELLA
+     - **Image**: img/materiales/682082.JPG
+     - **Quantity**: 891
+     - **Price**: $741
+
+   - **Product 9**:
+     - **Code**: 843439
+     - **Description**: CINTA REFLECTANTE PET  ROLLO X 45.7M - VERDE
+     - **Brand**: HELLA
+     - **Image**: img/materiales/843439.JPG
+     - **Quantity**: 205
+     - **Price**: $63,382
+
+   - **Product 10**:
+     - **Code**: 606882
+     - **Description**: CUÑA PU NARANJA 5TON CAMIONETA 15X18X20CM
+     - **Brand**: THUNDER
+     - **Image**: img/materiales/606882.JPG
+     - **Quantity**: 505
+     - **Price**: $6,243
+
+   - **Product 11**:
+     - **Code**: 615525
+     - **Description**: PORTA BICICLETAS DE ENGANCHE (4 BIKES)
+     - **Brand**: HUSKY
+     - **Image**: img/materiales/615525.jpg
+     - **Quantity**: 22
+     - **Price**: $96,663
+
+   - **Product 12**:
+     - **Code**: 596960
+     - **Description**: ALARMA RETROCESO 9-48V 110DB
+     - **Brand**: HELLA
+     - **Image**: img/materiales/596960.jpg
+     - **Quantity**: 1361
+     - **Price**: $9,472
+
+4. **Footer**:
+   - Include any terms and conditions related to the quotation.
+   - Contact information for follow-up or questions.
+
+By generating this as a PDF document, you ensure a professional presentation that can be easily shared and printed. Consider using tools like Adobe Acrobat, LaTeX with a PDF output, or Python with libraries like ReportLab to create the PDF document.
