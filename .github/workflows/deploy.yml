@@ -25,7 +25,11 @@ jobs:
       run: pip install poetry
 
     - name: Install dependencies with Poetry
-      run: poetry install
+      run: |
+        poetry install --all-extras
+
+    - name: Verify installed packages
+      run: ls -R src
 
     - name: Verify files
       run: ls -R src
@@ -40,4 +44,4 @@ jobs:
       run: |
         echo "Running deployment script"
         cd src
-        python3 -m agente_tab.main run
+        poetry run python3 -m agente_tab.main run
