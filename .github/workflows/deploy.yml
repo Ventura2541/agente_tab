@@ -13,17 +13,22 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js (si tu proyecto es en Node.js, cambia según tu stack)
-      uses: actions/setup-node@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
       with:
-        node-version: '14'
+        python-version: '3.12.8'
 
     - name: Install dependencies
-      run: npm install
+      run:
+        python -m pip install --upgrade pip
+        pip install -r src/requirements.txt
 
     - name: Build project
-      run: npm run build
+      run:
+        echo "Running build Script"
 
     - name: Deploy to Cloud
       run: |
-        # Aquí puedes añadir comandos específicos para desplegar tu proyecto en la nube
+        echo "Running deployment script"
+        cd src
+        python3 -m agente_tab.main run
