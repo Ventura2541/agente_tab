@@ -32,6 +32,8 @@ jobs:
         echo "Running build Script"
 
     - name: Deploy to Cloud
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         echo "Running deployment script"
         cd src
