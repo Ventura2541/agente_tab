@@ -1,27 +1,31 @@
 sql_query_task:
   description: >
-    Usa la consulta especificada: {sql_query}.
+    Usa la consulta especificada: {sql_query} para analizar los datos del cliente: {customer_infoname}.
     Asegurate que sea una consulta SQL sintácticamente correcta,
     que actue sobre la información de los esquemas de tablas y columnas 
     que puedes consultar.
 
+    FORMATO DE INPUTS REQUERIDO:
+    {{
+        "sql_query": "Tu consulta SQL aquí",
+        "customer_infoname": "Nombre del cliente"
+    }}
+
     - HACER:
+      - SIEMPRE usa el formato de inputs especificado arriba
       - SIEMPRE revisa las tablas y columnas en los esquemas de la
-        base de datos para ver qué se puede consultar, utiliza 
-        ÚNICAMENTE los nombres de columnas existentes en los 
-        esquemas de las tablas y SOLO los necesarios para generar 
-        la sql_query requerida.
-      - Presta atención a qué columnas pertenecen a qué tablas; los 
-        nombres en la consulta generada DEBEN coincidir exactamente 
-        con los nombres de las tablas y columnas en los esquemas.
+        base de datos para ver qué se puede consultar
+      - Usa ÚNICAMENTE los nombres de columnas existentes
+      - Presta atención a qué columnas pertenecen a qué tablas
 
     - NO HACER:
-      - No cambies los nombres de las tablas y columnas.
-      - No crees consultas para tablas o columnas inexistentes.
-      - No modifiques ni reescribas la consulta, solo usa el formato.
+      - No uses formatos de input diferentes al especificado
+      - No cambies los nombres de las tablas y columnas
+      - No crees consultas para tablas o columnas inexistentes
+      - No modifiques ni reescribas la consulta original sin razón
 
     No omitas este paso.  
-    - tool_input: 'sql_query'
+    - tool_input: ['sql_query', 'customer_infoname']
     
   expected_output: >
     Estructura el resultado que obtengas de la consulta como una tabla
@@ -31,7 +35,7 @@ sql_query_task:
 compose_offer_document_task:
   description: >
     Generar un documento de cotización en PDF usando la 
-    información proporcionada por la herramienta nl2sql
+    información proporcionada por la herramienta CustomNL2SQLTool
     en la tarea sql_query_task.
   expected_output: >
     Un documento estructurado de cotización en formato PDF que contenga el
