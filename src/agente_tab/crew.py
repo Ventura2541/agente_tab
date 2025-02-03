@@ -1,6 +1,6 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from crewai_tools import NL2SQLTool
+from agente_tab.tools.custom_nl2sql import CustomNL2SQLTool
 import yaml
 from pathlib import Path
 
@@ -25,7 +25,7 @@ class AgenteTop20MYSQLV2:
     def initialize_tools(self):
         try:
             print("🔵 [CREW] Inicializando herramientas...")        
-            self.nl2sql_tool = NL2SQLTool(
+            self.custom_sql_tool = CustomNL2SQLTool(
                 db_uri="mysql+mysqldb://tabparts_ia:Tab123456Parts@201.148.105.157:3306/tabparts_ai",
                 tables=["ventas_detalle", "productos", "clientes"],
                 columns={
@@ -33,9 +33,19 @@ class AgenteTop20MYSQLV2:
                     "productos": ["codigo_laudus", "descripcion", "familia_descripcion", "marca", "imagen1", "stock"],
                     "clientes": ["nombre", "rut"],
                 },
-            verbose=True            
+                verbose=True            
             )
-            print("✅ [CREW] NL2SQLTool inicializado correctamente.")
+            
+            # Validación inicial de la herramienta
+            test_query = "SELECT 1"
+            test_customer = "TEST_CUSTOMER"
+            try:
+                self.custom_sql_tool._run(test_query, test_customer)
+                print("✅ [CREW] CustomNL2SQLTool validado correctamente")
+            except Exception as e:
+                print(f"⚠️ [CREW] Advertencia en validación inicial: {e}")
+            
+            print("✅ [CREW] CustomNL2SQLTool inicializado correctamente.")
         except Exception as e:
             print(f"❌ [CREW]Error al inicializar herramientas: {e}")
 
@@ -54,7 +64,10 @@ class AgenteTop20MYSQLV2:
     def create_agents_and_tasks(self):
         try:
             print("🔵 [CREW] Creando agentes y tareas...")
-            self.customer_analyst_1 = Agent(config=self.agents_config['customer_analyst_1'], tools=[self.nl2sql_tool])
+            self.customer_analyst_1 = Agent(
+                config=self.agents_config['customer_analyst_1'], 
+                tools=[self.custom_sql_tool]
+            )
             print(f"✅ Agente creado: {self.customer_analyst_1.role}")
 
             self.sql_query_task = Task(config=self.tasks_config['sql_query_task'], agent=self.customer_analyst_1)
