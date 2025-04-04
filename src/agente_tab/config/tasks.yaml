@@ -1,35 +1,32 @@
 sql_query_task:
   description: >
-    Usa la consulta especificada: {sql_query} para analizar los datos del cliente: {customer_infoname}.
-    Asegurate que sea una consulta SQL sintácticamente correcta,
-    que actue sobre la información de los esquemas de tablas y columnas 
-    que puedes consultar.
-
+    Usa la plantilla SQL especificada: {sql_template} y el diccionario de valores de parámetros: {parameter_values} 
+    para analizar los datos del cliente: {customer_infoname}.
+    La herramienta ejecutará la consulta de forma segura usando los parámetros nombrados (:param_name) proporcionados en el diccionario.
+    Asegúrate de que los inputs coinciden con el formato requerido.
+    
     FORMATO DE INPUTS REQUERIDO:
     {{
-        "sql_query": "Tu consulta SQL aquí",
+        "sql_template": "Tu plantilla SQL con :nombre_param aquí",
+        "parameter_values": {{\"nombre_param1\": \"Valor1\", \"nombre_param2\": \"Valor2\"}},
         "customer_infoname": "Nombre del cliente"
     }}
 
     - HACER:
-      - SIEMPRE usa el formato de inputs especificado arriba
-      - SIEMPRE revisa las tablas y columnas en los esquemas de la
-        base de datos para ver qué se puede consultar
-      - Usa ÚNICAMENTE los nombres de columnas existentes
-      - Presta atención a qué columnas pertenecen a qué tablas
+      - SIEMPRE usa el formato de inputs especificado arriba.
+      - Asegúrate de que la plantilla SQL use ':nombre_param' como placeholders.
+      - Asegúrate de que el diccionario `parameter_values` contenga claves que coincidan con todos los placeholders en la plantilla.
 
     - NO HACER:
-      - No uses formatos de input diferentes al especificado
-      - No cambies los nombres de las tablas y columnas
-      - No crees consultas para tablas o columnas inexistentes
-      - No modifiques ni reescribas la consulta original sin razón
+      - No uses formatos de input diferentes al especificado.
+      - No intentes ejecutar SQL directamente en la descripción; pasa la plantilla y el diccionario de parámetros.
 
-    No omitas este paso.  
-    - tool_input: ['sql_query', 'customer_infoname']
+    No omitas este paso.
+    - tool_input: ['sql_template', 'parameter_values', 'customer_infoname'] # Estos nombres deben coincidir con los inputs del kickoff
     
   expected_output: >
-    Estructura el resultado que obtengas de la consulta como una tabla
-    que contenga los datos en formato markdown ```sql ```. No habrá 
+    Estructura el resultado que obtengas de la ejecución de la consulta como una tabla
+    que contenga los datos en formato markdown ``` ```. No habrá 
     explicaciones ni comentarios.
 
 compose_offer_document_task:
@@ -40,8 +37,8 @@ compose_offer_document_task:
   expected_output: >
     Un documento estructurado de cotización en formato PDF que contenga el
     nombre del cliente, la fecha de la cotizacion, junto con las imagenes, 
-    codigos, descripciones, marcas vantidades y precios de los productos 
-    que están en stock.
+    codigos, descripciones, marcas cantidades, precios de los productos 
+    que están en stock y totales.
 
 
 
