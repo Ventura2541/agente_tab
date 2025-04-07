@@ -1,23 +1,24 @@
 sql_query_task:
   description: >
-    Usa la plantilla SQL especificada: {sql_template} y el diccionario de valores de parámetros: {parameter_values} 
+    Usa la plantilla SQL especificada: {sql_template} y los valores de parámetros: {parameter_values} 
     para analizar los datos del cliente: {customer_infoname}.
-    La herramienta ejecutará la consulta de forma segura usando los parámetros nombrados (:param_name) proporcionados en el diccionario.
+    La herramienta ejecutará la consulta de forma segura. 
+    Si la plantilla SQL usa placeholders posicionales (?), `parameter_values` debe ser una lista de valores en el orden correcto.
+    Si la plantilla SQL usa placeholders nombrados (:param_name), `parameter_values` debe ser un diccionario con claves que coincidan.
     Asegúrate de que los inputs coinciden con el formato requerido.
     
-    EJEMPLO FORMATO DE INPUTS REQUERIDO:
-    sql_template: "Tu plantilla SQL con :nombre_param aquí"
-    parameter_values: {{"nombre_param": "Valor"}} # Ejemplo simplificado con llaves escapadas
+    EJEMPLO FORMATO DE INPUTS REQUERIDO (para placeholders '?'):
+    sql_template: "SELECT columna FROM tabla WHERE columna1 = ? AND columna2 = ?"
+    parameter_values: ["valor1", "valor2"] # Lista de valores
     customer_infoname: "Nombre del cliente"
 
     - HACER:
-      - SIEMPRE usa el formato de inputs especificado arriba.
-      - Asegúrate de que la plantilla SQL use ':nombre_param' como placeholders.
-      - Asegúrate de que el diccionario `parameter_values` contenga claves que coincidan con todos los placeholders en la plantilla.
+      - SIEMPRE usa el formato de inputs especificado arriba según el tipo de placeholder.
+      - Asegúrate de que `parameter_values` coincida en tipo y contenido con los placeholders de la plantilla SQL.
 
     - NO HACER:
       - No uses formatos de input diferentes al especificado.
-      - No intentes ejecutar SQL directamente en la descripción; pasa la plantilla y el diccionario de parámetros.
+      - No intentes ejecutar SQL directamente en la descripción; pasa la plantilla y los parámetros.
 
     No omitas este paso.
     - tool_input: ['sql_template', 'parameter_values', 'customer_infoname'] # Estos nombres deben coincidir con los inputs del kickoff
