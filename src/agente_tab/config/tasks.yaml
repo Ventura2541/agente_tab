@@ -7,7 +7,7 @@ sql_query_task:
     
     EJEMPLO FORMATO DE INPUTS REQUERIDO:
     sql_template: "Tu plantilla SQL con :nombre_param aquí"
-    parameter_values: {"nombre_param": "Valor"} # Ejemplo simplificado
+    parameter_values: {{"nombre_param": "Valor"}} # Ejemplo simplificado con llaves escapadas
     customer_infoname: "Nombre del cliente"
 
     - HACER:
