@@ -5,12 +5,10 @@ sql_query_task:
     La herramienta ejecutará la consulta de forma segura usando los parámetros nombrados (:param_name) proporcionados en el diccionario.
     Asegúrate de que los inputs coinciden con el formato requerido.
     
-    FORMATO DE INPUTS REQUERIDO:
-    {{
-        "sql_template": "Tu plantilla SQL con :nombre_param aquí",
-        "parameter_values": {{\"nombre_param1\": \"Valor1\", \"nombre_param2\": \"Valor2\"}},
-        "customer_infoname": "Nombre del cliente"
-    }}
+    EJEMPLO FORMATO DE INPUTS REQUERIDO:
+    sql_template: "Tu plantilla SQL con :nombre_param aquí"
+    parameter_values: {"nombre_param": "Valor"} # Ejemplo simplificado
+    customer_infoname: "Nombre del cliente"
 
     - HACER:
       - SIEMPRE usa el formato de inputs especificado arriba.
