@@ -125,8 +125,7 @@ class CustomNL2SQLTool(BaseTool):
                 f"Template: {sql_template}\n"
                 f"Parameters Dict: {parameter_values}\n"
                 f"Error: {exc}\n"
-                "Asegúrate de proporcionar los inputs en el formato correcto:\n"
-                '{\n  "sql_template": "TU_TEMPLATE_SQL_CON_:nombre_param",\n  "parameter_values": {\"nombre_param\": \"VALOR\"},\n  "customer_infoname": "NOMBRE_CLIENTE"\n}'
+                'Formato esperado para los inputs: {"sql_template": "...", "parameter_values": {...}, "customer_infoname": "..."}'
             )
             print(f"❌ {error_msg}")
             return error_msg # Returning the error message
