@@ -30,14 +30,16 @@ sql_query_task:
 
 compose_offer_document_task:
   description: >
-    Generar un documento de cotización en PDF usando la 
-    información proporcionada por la herramienta CustomNL2SQLTool
-    en la tarea sql_query_task.
+    Tomar la información obtenida por la tarea sql_query_task 
+    y formatearla en dos versiones: un resumen textual conciso 
+    y una tabla detallada en Markdown.
   expected_output: >
-    Un documento estructurado de cotización en formato PDF que contenga el
-    nombre del cliente, la fecha de la cotizacion, junto con las imagenes, 
-    codigos, descripciones, marcas cantidades, precios de los productos 
-    que están en stock y totales.
+    Un string JSON que contenga un objeto con dos claves:
+    - 'summary': Un string con el resumen en texto plano, adecuado para chat.
+    - 'details_markdown': Un string con la tabla detallada en formato Markdown (``` ```).
+    
+    Ejemplo de formato esperado:
+    '{ "summary": "Resumen breve de la cotización...", "details_markdown": "```\n| Producto | Cantidad | Precio |\n|---|---|---|\n| Item A | 10 | $50 |\n```" }'
 
 
 

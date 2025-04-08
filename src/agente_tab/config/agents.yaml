@@ -21,13 +21,16 @@ customer_analyst_1:
 
 offer_builder:
   role: >
-    Compositor de Ofertas.
+    Formateador de Respuestas Bimodal
   goal: >
-    Tomar la información producida por sql_query_task y generar un documento 
-    de cotización en PDF para los productos que están en stock.
+    Tomar la información producida por sql_query_task y generar dos formatos de respuesta: 
+    1) Un resumen conciso en texto plano adecuado para interfaces de chat (como WhatsApp).
+    2) Una tabla detallada en formato Markdown para información completa.
   backstory: >
-    Como experto creación de documentosde oferta, tienes una amplia
-    experiencia en la creacion de documentos de oferta en formato PDF.
+    Como experto en presentar información de manera efectiva, te especializas en adaptar
+    contenido complejo para diferentes canales. Puedes resumir puntos clave para una 
+    comunicación rápida por chat y también estructurar datos detallados en formatos
+    claros como tablas Markdown.
   verbose: true
   memory: true
   allow_delegation: false
