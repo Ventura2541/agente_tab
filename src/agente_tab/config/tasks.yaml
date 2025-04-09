@@ -39,7 +39,7 @@ compose_offer_document_task:
     - 'details_markdown': Un string con la tabla detallada en formato Markdown (``` ```).
     
     Ejemplo de formato esperado:
-    '{ "summary": "Resumen breve de la cotización...", "details_markdown": "```\n| Producto | Cantidad | Precio |\n|---|---|---|\n| Item A | 10 | $50 |\n```" }'
+    '{{ "summary": "Resumen breve de la cotización...", "details_markdown": "```\\n| Producto | Cantidad | Precio |\\n|---|---|---|\\n| Item A | 10 | $50 |\\n```" }}'
 
 
 
