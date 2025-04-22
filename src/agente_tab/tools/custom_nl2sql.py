@@ -101,13 +101,17 @@ class CustomNL2SQLTool(BaseTool):
                 raise ValueError("customer_infoname debe ser una cadena de texto no vacía")
 
             # Optional: Validate if all named parameters in template exist in the dict
-            # import re
-            # found_params = set(re.findall(r':([a-zA-Z0-9_]+)', sql_template))
-            # provided_params = set(parameter_values.keys())
-            # if not found_params.issubset(provided_params):
-            #     missing = found_params - provided_params
-            #     print(f"⚠️ Warning: Missing parameters in input dict: {missing}")
-                # Decide if this should be an error
+            import re # Make sure re is imported
+            found_params = set(re.findall(r':([a-zA-Z0-9_]+)', sql_template))
+            provided_params = set(parameter_values.keys())
+            if not found_params.issubset(provided_params):
+                missing = found_params - provided_params
+                # Consider making this an error instead of just a warning
+                # Raise ValueError or return an error message
+                # For now, just printing a warning
+                print(f"⚠️ Warning: Missing parameters in input dict: {missing}")
+                # Example of raising an error:
+                # raise ValueError(f"Faltan parámetros requeridos en la entrada: {missing}")
 
             print(f"🔍 Ejecutando consulta parametrizada (nombrada) para cliente: {customer_infoname}")
             print(f"   Template: {sql_template[:100]}...") # Log snippet
