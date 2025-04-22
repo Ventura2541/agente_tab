@@ -27,11 +27,29 @@ class AgenteTop20MYSQLV2:
             print("🔵 [CREW] Inicializando herramientas...")        
             self.custom_sql_tool = CustomNL2SQLTool(
                 db_uri="mysql+mysqldb://tabparts_ia:Tab123456Parts@201.148.105.157:3306/tabparts_ai",
-                tables=["ventas_detalle", "productos", "clientes"],
+                tables=["ventas_detalle", "productos", "clientes", "ventas_cabecera"],
                 columns={
-                    "ventas_detalle": ["producto", "descripcion_producto", "familia", "cantidad", "neto", "cliente", "anno", "mes"],
-                    "productos": ["codigo_laudus", "descripcion", "familia_descripcion", "marca", "imagen1", "stock"],
-                    "clientes": ["nombre", "rut"],
+                    "ventas_detalle": [
+                        "producto", "descripcion_producto", "familia", "cantidad", "neto", 
+                        "cliente", "anno", "mes", "fecha_emision", "tipo", "numero_documento"
+                    ],
+                    "productos": [
+                        "codigo_laudus", "descripcion", "familia_descripcion", "marca", 
+                        "imagen1", "stock",
+                        "precio_A4", "precio_A5", "precio_A6", "precio_C1", "precio_D1", 
+                        "precio_D2", "precio_F1", "precio_G1", "precio_G2", "precio_G3",
+                        "precio_G4", "precio_H1", "precio_H2", "precio_I1", "precio_I2",
+                        "precio_J1", "precio_J2", "precio_J3", "precio_P1", "precio_P2", 
+                        "precio_Q2", "precio_Z1", "precio_Z2", "precio_Z3", "precio_Z4",
+                        "oferta_1", "oferta_2"
+                    ],
+                    "clientes": [
+                        "nombre", "rut", "tipo", "giro", "forma_pago", "plazos", 
+                        "limite_credito"
+                    ],
+                    "ventas_cabecera": [
+                        "numero_documento", "fecha_emision", "cliente", "neto", "iva", "total"
+                    ]
                 },
                 verbose=True            
             )
