@@ -7,7 +7,6 @@ sql_query_task:
 
     FORMATO DE INPUTS REQUERIDO:
     sql_template: "SELECT columna FROM tabla WHERE nombre_cliente = :cliente AND categoria = :cat"
-    parameter_values: {{"cliente": "Nombre del cliente", "cat": "ValorCategoría"}} # Diccionario JSON
     customer_infoname: "Nombre del cliente"
 
     - HACER:
