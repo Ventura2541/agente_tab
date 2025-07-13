@@ -19,7 +19,10 @@ sql_query_task:
     No omitas este paso.
     # tool_input: ['sql_template', 'parameter_values', 'customer_infoname'] # Esto sigue igual
   expected_output: >
-    Estructura el resultado como una tabla Markdown ``` ```. Sin explicaciones.
+    El resultado crudo y sin procesar de la ejecución de la consulta.
+    Debe ser el output directo de la herramienta, que es una lista de diccionarios Python
+    o un mensaje de estado si la consulta no devuelve filas.
+    Ejemplo: [{'col1': 'val1', 'col2': 'val2'}, {'col1': 'val3', 'col2': 'val4'}]
 
 compose_offer_document_task:
   description: >
